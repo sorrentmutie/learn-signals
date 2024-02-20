@@ -12,7 +12,8 @@ export class CustomersService {
   private myInterval: any;
   count = signal(1);
 
-  
+  customer : WritableSignal<Customer> 
+  = signal ( {name: "Mario Rossi" , city: "Rome"})  
 
   
   constructor() { }
@@ -29,5 +30,10 @@ export class CustomersService {
     clearInterval(this.myInterval);
   }
 
+  update(){
+    this.customer.update(c => {
+       return { name: "Luigi Bianchi", city: "Naples"}
+    })
+  }
 
 }

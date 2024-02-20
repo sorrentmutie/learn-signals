@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CustomersService } from './services/customers.service';
 import { Customer } from './shared/customer';
 import { Observable } from 'rxjs';
+import { RandomUserService } from './random-user.service';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,9 @@ import { Observable } from 'rxjs';
 export class AppComponent {
   title = 'my-demo';
 
-  constructor(public service: CustomersService) {
+  constructor(public service: CustomersService,
+    public randomUsers: RandomUserService) {
+      this.randomUsers.getData();
   }
 
   start() {

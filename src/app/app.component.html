@@ -3,6 +3,8 @@
 <button (click)="start()">Start</button>
 <button (click)="stop()">Stop</button>
 
+<p>{{randomUsers.reqResSignal()?.data?.length}}</p>
+
 <p> {{(service.customers$ | async)?.name}}</p>
 
 <app-footer/>
